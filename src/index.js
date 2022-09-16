@@ -12,22 +12,38 @@ if (document.readyState !== "loading") {
 
 function initializeCode() {
   const submitDataButton = document.getElementById("submit-data");
+  const emptyTableButton = document.getElementById("empty-table");
 
   submitDataButton.addEventListener("click", function () {
-    let table = document.getElementById("table");
+    const table = document.getElementById("table");
 
     let newTableRow = document.createElement("tr");
-    let newTableCell = document.createElement("td");
+    let newUsername = document.createElement("td");
+    let newEmail = document.createElement("td");
+    let newAddress = document.createElement("td");
+    let newAdmin = document.createElement("td");
 
     table.appendChild(newTableRow);
 
-    newTableCell.innerText = document.getElementById("input-username").value;
-    table.appendLastChild(newTableCell);
-    newTableCell.innerText = document.getElementById("input-email").value;
-    table.appendLastChild(newTableCell);
-    newTableCell.innerText = document.getElementById("input-address").value;
-    table.appendLastChild(newTableCell);
-    newTableCell.innerText = document.getElementById("input-admin").value;
-    table.appendLastChild(newTableCell);
+    newUsername.innerText = document.getElementById("input-username").value;
+    table.lastChild.appendChild(newUsername);
+    newEmail.innerText = document.getElementById("input-email").value;
+    table.lastChild.appendChild(newEmail);
+    newAddress.innerText = document.getElementById("input-address").value;
+    table.lastChild.appendChild(newAddress);
+    if (document.getElementById("input-admin").checked) {
+      newAdmin.innerText = "X";
+    } else {
+      newAdmin.innerText = "-";
+    }
+    table.lastChild.appendChild(newAdmin);
+  });
+
+  emptyTableButton.addEventListener("click", function () {
+    const table = document.getElementById("table");
+
+    while (table.hasChildNodes()) {
+      table.removeChild(table.lastChild);
+    }
   });
 }
