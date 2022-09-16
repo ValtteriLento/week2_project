@@ -16,24 +16,18 @@ function initializeCode() {
   submitDataButton.addEventListener("click", function () {
     const table = document.getElementById("table");
 
-    let data = {
-      username: document.getElementById("input-username"),
-      email: document.getElementById("input-email"),
-      address: document.getElementById("input-address"),
-      admin: document.getElementById("input-admin"),
-    };
-
     let newTableRow = document.createElement("tr");
-
-    newTableRow.innerHTML = (
-      <tr>
-        <td>data.username.value</td>
-        <td>data.email.value</td>
-        <td>data.address.value</td>
-        <td>data.admin.value</td>
-      </tr>
-    );
+    let newTableCell = document.createElement("td");
 
     table.appendChild(newTableRow);
+
+    newTableCell.innerText = document.getElementById("input-username").value;
+    table.appendLastChild(newTableCell);
+    newTableCell.innerText = document.getElementById("input-email").value;
+    table.appendLastChild(newTableCell);
+    newTableCell.innerText = document.getElementById("input-address").value;
+    table.appendLastChild(newTableCell);
+    newTableCell.innerText = document.getElementById("input-admin").value;
+    table.appendLastChild(newTableCell);
   });
 }

@@ -209,8 +209,16 @@ function initializeCode() {
   submitDataButton.addEventListener("click", function () {
     var table = document.getElementById("table");
     var newTableRow = document.createElement("tr");
-    newTableRow.innerText = ++noteCounter + ". " + document.getElementById("message").value;
-    notes.appendChild(newParagraph);
+    var newTableCell = document.createElement("td");
+    table.appendChild(newTableRow);
+    newTableCell.innerText = document.getElementById("input-username").value;
+    table.appendLastChild(newTableCell);
+    newTableCell.innerText = document.getElementById("input-email").value;
+    table.appendLastChild(newTableCell);
+    newTableCell.innerText = document.getElementById("input-address").value;
+    table.appendLastChild(newTableCell);
+    newTableCell.innerText = document.getElementById("input-admin").value;
+    table.appendLastChild(newTableCell);
   });
 }
 },{"./styles.css":"src/styles.css"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -241,7 +249,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40225" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46575" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
