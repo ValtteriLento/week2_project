@@ -14,12 +14,11 @@ function initializeCode() {
   const submitDataButton = document.getElementById("submit-data");
 
   submitDataButton.addEventListener("click", function () {
-    const table = document.getElementById("table");
+    let table = document.getElementById("table");
 
     let newTableRow = document.createElement("tr");
     let newTableCell = document.createElement("td");
 
-    newTableRow.innerText = "";
     table.appendChild(newTableRow);
 
     newTableCell.innerText = document.getElementById("input-username").value;
