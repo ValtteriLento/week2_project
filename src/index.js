@@ -22,6 +22,7 @@ function initializeCode() {
     let newEmail = document.createElement("td");
     let newAddress = document.createElement("td");
     let newAdmin = document.createElement("td");
+    let newImage = document.createElement("td");
 
     table.appendChild(newTableRow);
 
@@ -37,6 +38,10 @@ function initializeCode() {
       newAdmin.innerText = "-";
     }
     table.lastChild.appendChild(newAdmin);
+    newImage.innerText = URL.createObjectURL(
+      document.getElementById("input-image").value
+    );
+    table.lastChild.appendChild(newImage);
   });
 
   emptyTableButton.addEventListener("click", function () {

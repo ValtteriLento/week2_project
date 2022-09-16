@@ -214,6 +214,7 @@ function initializeCode() {
     var newEmail = document.createElement("td");
     var newAddress = document.createElement("td");
     var newAdmin = document.createElement("td");
+    var newImage = document.createElement("td");
     table.appendChild(newTableRow);
     newUsername.innerText = document.getElementById("input-username").value;
     table.lastChild.appendChild(newUsername);
@@ -229,6 +230,8 @@ function initializeCode() {
     }
 
     table.lastChild.appendChild(newAdmin);
+    newImage.innerText = URL.createObjectURL(document.getElementById("input-image").value);
+    table.lastChild.appendChild(newImage);
   });
   emptyTableButton.addEventListener("click", function () {
     var table = document.getElementById("table");
