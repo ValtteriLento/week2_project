@@ -19,6 +19,7 @@ function initializeCode() {
     let newTableRow = document.createElement("tr");
     let newTableCell = document.createElement("td");
 
+    newTableRow.innerText = "";
     table.appendChild(newTableRow);
 
     newTableCell.innerText = document.getElementById("input-username").value;
