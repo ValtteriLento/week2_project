@@ -9,7 +9,7 @@
 
 <body>
 
-    <fieldset>
+    <form action="" method="GET">
         <legend>Information:</legend>
         <label for="input-username">Username:</label>
         <input type="text" name="input-username" id="input-username" placeholder="Username">
@@ -23,10 +23,11 @@
         <label for="input-admin">Admin:</label>
         <input type="checkbox" name="input-admin" id="input-admin" placeholder="Admin">
         <br>
-    </fieldset>    
-
+    </form>
+    
     <button id="submit-data">Submit data</button>
-
+    <button id="empty-table">Empty table</button>
+    
     <table>
         <thead>
             <tr><th>Username</th><th>Email</th><th>Address</th><th>Admin</th></tr>
