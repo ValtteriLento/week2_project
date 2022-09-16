@@ -210,7 +210,6 @@ function initializeCode() {
     var table = document.getElementById("table");
     var newTableRow = document.createElement("tr");
     var newTableCell = document.createElement("td");
-    newTableRow.innerText = "";
     table.appendChild(newTableRow);
     newTableCell.innerText = document.getElementById("input-username").value;
     table.appendLastChild(newTableCell);
@@ -250,7 +249,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38729" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43723" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
